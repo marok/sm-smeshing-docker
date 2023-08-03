@@ -1,4 +1,7 @@
-# How To Use
+# Spacemesh Full Node Docker
+[![Docker Image CI](https://github.com/marok/sm-smeshing-docker/actions/workflows/docker-image.yml/badge.svg)](https://github.com/marok/sm-smeshing-docker/actions/workflows/docker-image.yml)
+
+## Usage
 
 1. Build docker image:
 
