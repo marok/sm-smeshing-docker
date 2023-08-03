@@ -17,7 +17,7 @@ RUN apt-get update && \
 	jq \
 	;
 
-ARG GO_SPACEMESH_VER=v1.0.7
+ARG GO_SPACEMESH_VER=v1.0.8
 
 RUN wget https://storage.googleapis.com/go-spacemesh-release-builds/${GO_SPACEMESH_VER}/Linux.zip -O go-sm.zip
 RUN unzip go-sm.zip && mv Linux/* .
