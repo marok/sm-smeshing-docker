@@ -1,0 +1,19 @@
+{
+  "api": {
+    "grpc-public-services": [
+      "debug",
+      "global",
+      "mesh",
+      "node",
+      "transaction",
+      "activation"
+    ],
+    "grpc-public-listener": "127.0.0.1:9092",
+    "grpc-private-services": [
+      "smesher",
+      "admin"
+    ],
+    "grpc-private-listener": "127.0.0.1:9093",
+    "grpc-json-listener": "127.0.0.1:9094"
+  }
+}
