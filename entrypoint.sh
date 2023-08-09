@@ -23,4 +23,4 @@ mkdir -p $log_dir_var
 	-d $data_dir_var \
 	--smeshing-opts-datadir $post_dir_var \
 	--listen /ip4/0.0.0.0/tcp/$LISTEN_PORT \
-	$@ |& tee $log_dir_var/spacemesh.log
+	$@ |& tee -a $log_dir_var/spacemesh-$(date +"%F_%T").log
