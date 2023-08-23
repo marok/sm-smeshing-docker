@@ -1,18 +1,21 @@
 name: Docker Image CI
 
-on:
+on:   
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
-
-  build:
-
+  build_and_publish:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag spacemesh-node:$(date +%s)
+    - name: Build and push the docker image
+      run: |
+        docker login --username marok --password ${{ secrets.GH_PASS }} ghcr.io
+        docker build . --file Dockerfile --tag ghcr.io/marok/spacemesh-node:$(date +%s)
+        docker tag ghcr.io/marok/spacemesh-node:$(date +%s) ghcr.io/marok/spacemesh-node:latest
+        docker push ghcr.io/marok/spacemesh-node:$(date +%s)
+        docker push ghcr.io/marok/spacemesh-node:latest
+        
