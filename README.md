@@ -3,9 +3,11 @@
 
 ## Usage
 
-1. Build docker image:
+1. Build docker image or pull latest one from ghcr.io:
 
         docker build . -t sm-smeshing
+
+        docker pull ghcr.io/marok/spacemesh-node:latest
 1. Prepare smeshing node working directory
 
         mkdir -p <SM_WORKDIR>/cfg
