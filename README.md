@@ -3,11 +3,6 @@
 
 ## Usage
 
-1. Build docker image or pull latest one from ghcr.io:
-
-        docker build . -t sm-smeshing
-
-        docker pull ghcr.io/marok/spacemesh-node:latest
 1. Prepare smeshing node working directory
 
         mkdir -p <SM_WORKDIR>/cfg
@@ -41,7 +36,7 @@
         version: '3.8'
         services:
           sm:
-            image: sm-smeshing
+            image: ghcr.io/marok/spacemesh-node:latest
             container_name: sm
             network_mode: host
             restart: unless-stopped
@@ -58,7 +53,7 @@
               - LISTEN_PORT=7513
             command:
 
-    Run container via: ```docker compose up -d```.
+    Run container via: ```docker compose pull && docker compose up -d```.
 
 1. Verify in logs if Smacemesh full node is working:
 
