@@ -18,6 +18,11 @@ cat config.json
 
 mkdir -p $log_dir_var
 
+# pack old logs
+pushd $log_dir_var
+for FILE in *.log; do tar --force-local -zcvf $FILE.tar.gz $FILE && sudo rm $FILE; done
+popd
+
 ./go-spacemesh \
 	--config config.json \
 	-d $data_dir_var \
