@@ -17,13 +17,13 @@ RUN apt-get update && \
 	jq \
 	;
 
-ARG GO_SPACEMESH_VER=v1.2.2
+ARG GO_SPACEMESH_VER=v1.2.4
 
 RUN wget https://storage.googleapis.com/go-spacemesh-release-builds/${GO_SPACEMESH_VER}/Linux.zip -O go-sm.zip
 RUN unzip go-sm.zip && mv Linux/* .
 RUN chmod +x go-spacemesh
 
-COPY configs/config.mainnet.metrics-${GO_SPACEMESH_VER}.json config-mainnet.json
+COPY configs/config.mainnet-${GO_SPACEMESH_VER}.json config-mainnet.json
 COPY configs/config-disable-remote-grpc.json config-disable-remote-grpc.json
 COPY entrypoint.sh .
 
